@@ -56,12 +56,4 @@ public class StudentServiceDatabase implements StudentService
     		log.info("student " + student.getNpm() + " updated");
     }
 
-
-	@Override
-	public CourseModel selectCourse(String id) {
-		CourseModel course = studentMapper.selectCourse(id);
-		log.info ("select course with id " + course.getIdCourse());
-		return course;
-	}
-
 }

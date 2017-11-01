@@ -18,6 +18,4 @@ public interface StudentService
     void deleteStudent (String npm);
     
     void updateStudent (StudentModel student);
-    
-    CourseModel selectCourse (String id);
 }

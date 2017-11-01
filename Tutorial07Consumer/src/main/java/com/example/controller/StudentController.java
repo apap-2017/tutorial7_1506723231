@@ -90,18 +90,6 @@ public class StudentController
             return "not-found";
         }
     }
-    
-    @RequestMapping("/course/view/{id}")
-    public String viewCourse(Model model,
-    		@PathVariable(value = "id") String id) {
-    	
-    		CourseModel course = studentDAO.selectCourse(id);
-    		
-    		model.addAttribute("course", course);
-    		model.addAttribute("title", "Tampilkan Course");
-    		
-    		return "view-course";
-    }
 
 
     @RequestMapping("/student/viewall")

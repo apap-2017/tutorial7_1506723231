@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 public class CourseModel
 {
 	@NotNull
-	private String idCourse;
+	private String id_course;
     
 	@NotNull
     private String name;

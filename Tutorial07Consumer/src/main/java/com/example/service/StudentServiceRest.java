@@ -48,11 +48,4 @@ public class StudentServiceRest implements StudentService {
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
-	public CourseModel selectCourse(String id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }
