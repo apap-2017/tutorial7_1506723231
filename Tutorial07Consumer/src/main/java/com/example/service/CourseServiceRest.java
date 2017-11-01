@@ -20,16 +20,14 @@ public class CourseServiceRest implements CourseService {
 
 	@Override
 	public CourseModel selectCourse(String id) {
-		// TODO Auto-generated method stub
+		log.info("REST - select course with id {}", id);
 		return courseDAO.selectCourse(id);
 	}
 
 	@Override
 	public List<CourseModel> selectAllCourses() {
-		// TODO Auto-generated method stub
+		log.info("REST - select all courses");
 		return courseDAO.selectAllCourses();
 	}
 	
-	
-
 }
