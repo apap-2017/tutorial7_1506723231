@@ -1,0 +1,40 @@
+<div th:replace="fragments/header"></div>
+<div class="container">
+	<h1>All Students</h1><br/>
+	
+	<table class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" id="allStudents" width="100%">
+		<thead>
+			<tr>
+				<th class="text-center">No</th>
+				<th class="text-center">NPM</th>
+				<th class="text-center">Name</th>
+				<th class="text-center">GPA</th>
+				<th class="text-center">Cumlaude</th>
+				<th class="text-center">Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="student,iterationStatus: ${students}">
+				<td class="text-center" th:text="${iterationStatus.count}">No. 1</td>
+				<td class="text-center" th:text="${student.npm}">Student NPM</td>
+				<td class="text-center" th:text="${student.name}">Student Name</td>
+				<td class="text-center" th:text="${student.gpa}">Student GPA</td>
+				<td class="text-center" th:text="${student.gpa >= 3.49} ? 'Cumlaude!' : 'Sangat Memuaskan!'">Keterangan</td>
+				<td class="text-center">
+					<div class="btn-group"  role="group" >
+						<a th:href="'/student/delete/' + ${student.npm}"><button type="button" class="btn btn-secondary"> Delete Data</button></a>
+						<a th:href="'/student/update/' + ${student.npm}"><button type="button" class="btn btn-secondary"> Update Data</button></a>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>  
+</div>
+<div th:replace="fragments/footer"></div>
+<script>
+	$(document).ready(function() {
+	    $('#allStudents').DataTable({
+	    		responsive: true
+	    });
+	} );
+</script>
