@@ -13,7 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
-public class StudentServiceDatabase implements StudentService
+public class CourseServiceDatabase implements CourseService
 {
     @Autowired
     private StudentMapper studentMapper;
@@ -28,34 +28,11 @@ public class StudentServiceDatabase implements StudentService
 
 
     @Override
-    public List<StudentModel> selectAllStudents ()
+    public List<CourseModel> selectAllCourses()
     {
-        log.info ("select all students");
-        return studentMapper.selectAllStudents ();
+        log.info ("select all courses");
+        return studentMapper.selectAllCourses();
     }
-
-
-    @Override
-    public void addStudent (StudentModel student)
-    {
-        studentMapper.addStudent (student);
-        log.info("masuk");
-    }
-
-
-    @Override
-    public void deleteStudent (String npm)
-    {
-    		studentMapper.deleteStudent(npm);
-    		log.info("student " + npm + " deleted");
-    }
-    
-    @Override
-    public void updateStudent (StudentModel student) {
-    		studentMapper.updateStudent(student);
-    		log.info("student " + student.getNpm() + " updated");
-    }
-
 
 	@Override
 	public CourseModel selectCourse(String id) {
